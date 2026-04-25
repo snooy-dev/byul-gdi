@@ -1,0 +1,5 @@
+/* Visual Studio Settings File */
+{
+  "languages.cpp.codeStyle.formatting.indentation.indentNamespaceContents": false,
+  "languages.cpp.codeStyle.formatting.indentation.indentCaseLabels": true
+}

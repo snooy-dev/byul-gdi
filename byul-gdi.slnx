@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="byul/byul.vcxproj" Id="395ae0e7-1f44-4e31-ba41-50c9e9ef5f09" />
+</Solution>

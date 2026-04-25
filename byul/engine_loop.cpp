@@ -1,0 +1,33 @@
+module EngineLoop;
+
+import std;
+
+namespace byul {
+EngineLoop::EngineLoop(Engine& engine) : m_engine(engine)
+{
+}
+
+void EngineLoop::Run()
+{
+	std::chrono::steady_clock::time_point current_time{};
+	std::chrono::steady_clock::time_point prev_time{ std::chrono::steady_clock::now() };
+
+	while (!Engine::IsExiting()) {
+		current_time = std::chrono::steady_clock::now();
+		std::chrono::duration duration{ current_time - prev_time };
+		prev_time = current_time;
+		const double delta_second{ std::chrono::duration<double>(duration).count() };
+
+		m_engine.GetRenderer().render_queue.push(std::to_wstring(delta_second));	// TODO: for test
+		
+		Tick();
+	}
+}
+
+void EngineLoop::Tick()
+{
+	m_engine.GetApplication().PumpMessage();
+
+	m_engine.GetRenderer().Draw();
+}
+}	// namespace byul
