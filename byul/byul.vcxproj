@@ -106,6 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <BuildStlModules>true</BuildStlModules>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -128,20 +129,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="application.cpp" />
-    <ClCompile Include="engine.cpp" />
-    <ClCompile Include="engine.ixx" />
-    <ClCompile Include="engine_loop.cpp" />
-    <ClCompile Include="engine_loop.ixx" />
-    <ClCompile Include="gdi.cpp" />
-    <ClCompile Include="gdi.ixx" />
-    <ClCompile Include="launch.cpp" />
-    <ClCompile Include="launch.ixx" />
-    <ClCompile Include="renderer.cpp" />
-    <ClCompile Include="renderer.ixx" />
-    <ClCompile Include="rhi.ixx" />
-    <ClCompile Include="application.ixx" />
-    <ClCompile Include="win_main.cpp" />
+    <ClCompile Include="system\gui\application.cpp" />
+    <ClCompile Include="asset_manager.cpp" />
+    <ClCompile Include="asset_manager.ixx" />
+    <ClCompile Include="system\gui\canvas.ixx" />
+    <ClCompile Include="core\file_manager.ixx" />
+    <ClCompile Include="core\file_mananger.cpp" />
+    <ClCompile Include="engine\engine.cpp" />
+    <ClCompile Include="engine\engine.ixx" />
+    <ClCompile Include="engine\engine_loop.cpp" />
+    <ClCompile Include="engine\engine_loop.ixx" />
+    <ClCompile Include="game_manager.cpp" />
+    <ClCompile Include="game_manager.ixx" />
+    <ClCompile Include="game_object.ixx" />
+    <ClCompile Include="system\renderer\gdi.cpp" />
+    <ClCompile Include="system\renderer\gdi.ixx" />
+    <ClCompile Include="launch\launch.cpp" />
+    <ClCompile Include="launch\launch.ixx" />
+    <ClCompile Include="system\renderer\renderer.cpp" />
+    <ClCompile Include="system\renderer\renderer.ixx" />
+    <ClCompile Include="system\renderer\rhi.ixx" />
+    <ClCompile Include="system\gui\application.ixx" />
+    <ClCompile Include="launch\win_main.cpp" />
+    <ClCompile Include="scene.ixx" />
+    <ClCompile Include="core\core.ixx" />
+    <ClCompile Include="sprite.ixx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="thirdparty\json.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

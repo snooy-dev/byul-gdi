@@ -1,3 +1,5 @@
+// Copyright (c) 2026 snooy. All rights reserved.
+
 module Launch;
 
 import Engine;

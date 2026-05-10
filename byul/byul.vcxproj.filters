@@ -5,57 +5,118 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="launch">
+      <UniqueIdentifier>{b1ef7817-a437-4af9-82d2-1c4d923d8b40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{59cde3ca-74be-4dfa-8e9c-00e6d212479b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty">
+      <UniqueIdentifier>{75fca038-5bad-4289-82ec-6d4d025be719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{651d7baf-6780-464b-b4f7-e48de1ffb64d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\asset_manager">
+      <UniqueIdentifier>{8b4f9c6a-4362-4b17-91ad-b24aa01e4cab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\gui">
+      <UniqueIdentifier>{1370862b-e7db-4e23-b266-93743b1e0381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\gui\widget">
+      <UniqueIdentifier>{d72611fd-7dfa-4986-a5d0-fe33d5dba9c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\renderer">
+      <UniqueIdentifier>{cdc54b72-d233-4193-b6ed-1b50802027f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene">
+      <UniqueIdentifier>{3be77d9b-d0d7-470f-9be6-f3cfeeda9773}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="win_main.cpp">
+    <ClCompile Include="engine\engine.ixx">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="launch.ixx">
+    <ClCompile Include="engine\engine_loop.ixx">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="launch.cpp">
+    <ClCompile Include="engine\engine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="engine.ixx">
+    <ClCompile Include="engine\engine_loop.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="engine_loop.ixx">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="launch\win_main.cpp">
+      <Filter>launch</Filter>
     </ClCompile>
-    <ClCompile Include="engine.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="launch\launch.cpp">
+      <Filter>launch</Filter>
     </ClCompile>
-    <ClCompile Include="engine_loop.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="launch\launch.ixx">
+      <Filter>launch</Filter>
     </ClCompile>
-    <ClCompile Include="gdi.ixx">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="system\renderer\renderer.ixx">
+      <Filter>system\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="renderer.ixx">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="system\renderer\renderer.cpp">
+      <Filter>system\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="rhi.ixx">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="system\renderer\gdi.ixx">
+      <Filter>system\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="gdi.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="system\renderer\gdi.cpp">
+      <Filter>system\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="application.ixx">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="system\renderer\rhi.ixx">
+      <Filter>system\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="application.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="game_object.ixx">
+      <Filter>scene</Filter>
     </ClCompile>
-    <ClCompile Include="renderer.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="scene.ixx">
+      <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="core\core.ixx">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\file_manager.ixx">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\file_mananger.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="asset_manager.ixx">
+      <Filter>system\asset_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="asset_manager.cpp">
+      <Filter>system\asset_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="system\gui\application.ixx">
+      <Filter>system\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="system\gui\application.cpp">
+      <Filter>system\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="system\gui\canvas.ixx">
+      <Filter>system\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="game_manager.ixx">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="game_manager.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite.ixx">
+      <Filter>scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="thirdparty\json.hpp">
+      <Filter>thirdparty</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

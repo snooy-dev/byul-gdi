@@ -1,3 +1,5 @@
+// Copyright (c) 2026 snooy. All rights reserved.
+
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 

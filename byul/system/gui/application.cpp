@@ -1,10 +1,14 @@
+// Copyright (c) 2026 snooy. All rights reserved.
+
 module;
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
 module Application;
 
+import std;
 import Engine;
+import FileManager;
 
 namespace byul {
 Application::Application()
@@ -12,7 +16,14 @@ Application::Application()
 	HINSTANCE hinstance{ GetModuleHandle(nullptr) };
 	RegisterWindowClass(hinstance);
 
-	m_hwnd = ::CreateWindowEx(0UL, L"Engine", L"", WS_OVERLAPPEDWINDOW, 0, 0, 0, 0, nullptr, nullptr, hinstance, nullptr);
+	File project_file{ FileManager::LoadFile("byul_project") };
+	const std::string project_name{ project_file["project_name"] };
+
+	int size{ MultiByteToWideChar(CP_UTF8, 0, project_name.c_str(), -1, nullptr, 0) };
+	std::wstring window_name(size, 0);
+	MultiByteToWideChar(CP_UTF8, 0, project_name.c_str(), -1, window_name.data(), size);
+
+	m_hwnd = ::CreateWindow(L"Engine", window_name.c_str(), WS_OVERLAPPEDWINDOW, 0, 0, 0, 0, nullptr, nullptr, hinstance, nullptr);
 
 	double dpi = ::GetDpiForWindow(m_hwnd);
 	::SetWindowPos(m_hwnd, nullptr, 0, 0, static_cast<int>((1920 * dpi) / 96), static_cast<int>((1080 * dpi) / 96), SWP_NOMOVE);
@@ -69,6 +80,6 @@ LRESULT Application::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		}
 	}
 
-	return DefWindowProc(hWnd, uMsg, wParam, lParam);
+	return ::DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 }	// namespace byul
