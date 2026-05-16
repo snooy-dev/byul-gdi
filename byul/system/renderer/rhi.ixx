@@ -3,16 +3,22 @@
 export module Rhi;
 
 import std;
+import Core;
+import Texture;
 
 export namespace byul {
 class Rhi {
 public:
+	virtual void BeginFrame() = 0;
+	virtual void EndFrame() = 0;
+
 	virtual void Present() = 0;
 
 	virtual void DrawText() = 0;
-	virtual void DrawBitmap(const std::wstring& path) = 0;
+	virtual void DrawBitmap(const Texture& texture,
+		float x, float y, float w, float h, float angle,
+		int src_x, int src_y, int src_w, int src_h, bool rotate) = 0;
 
-	virtual bool LoadBitmap(const std::wstring& path) = 0;
-	virtual bool UnloadBitmap(const std::wstring& path) = 0;
+	virtual void CacheBitmap(const Texture& texture) = 0;
 };
 }	// namespace byul

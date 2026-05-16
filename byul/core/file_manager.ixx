@@ -11,6 +11,6 @@ export using File = nlohmann::json;
 export namespace byul {
 class FileManager {
 public:
-	static File LoadFile(const std::string& file_name);
+	static File LoadFile(const std::wstring& file_name);
 };
 }	// namespace byul

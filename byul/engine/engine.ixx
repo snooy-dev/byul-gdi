@@ -5,6 +5,7 @@ export module Engine;
 import std;
 import Application;
 import Renderer;
+import Input;
 import Scene;
 
 export namespace byul {
@@ -17,12 +18,14 @@ public:
 
 	Application& GetApplication();
 	Renderer& GetRenderer();
+	Scene& GetScene();
 
 private:
 	static bool m_is_exiting;
 
 	std::unique_ptr<Application> m_application;
 	std::unique_ptr<Renderer> m_renderer;
+	std::unique_ptr<Input> m_input;
 	std::unique_ptr<Scene> m_scene;
 };
 }	// namespace byul

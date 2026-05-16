@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="launch">
       <UniqueIdentifier>{b1ef7817-a437-4af9-82d2-1c4d923d8b40}</UniqueIdentifier>
     </Filter>
@@ -36,20 +28,14 @@
     <Filter Include="scene">
       <UniqueIdentifier>{3be77d9b-d0d7-470f-9be6-f3cfeeda9773}</UniqueIdentifier>
     </Filter>
+    <Filter Include="engine">
+      <UniqueIdentifier>{62f89ab7-8f7f-4a5d-976c-1de9755d8e0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\input">
+      <UniqueIdentifier>{7e57672d-3c8a-492a-b2fc-583f60a9757e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine\engine.ixx">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\engine_loop.ixx">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\engine.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\engine_loop.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="launch\win_main.cpp">
       <Filter>launch</Filter>
     </ClCompile>
@@ -65,19 +51,13 @@
     <ClCompile Include="system\renderer\renderer.cpp">
       <Filter>system\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="system\renderer\gdi.ixx">
-      <Filter>system\renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="system\renderer\gdi.cpp">
-      <Filter>system\renderer</Filter>
-    </ClCompile>
     <ClCompile Include="system\renderer\rhi.ixx">
       <Filter>system\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="game_object.ixx">
+    <ClCompile Include="scene\game_object.ixx">
       <Filter>scene</Filter>
     </ClCompile>
-    <ClCompile Include="scene.ixx">
+    <ClCompile Include="scene\scene.ixx">
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="core\core.ixx">
@@ -89,10 +69,10 @@
     <ClCompile Include="core\file_mananger.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="asset_manager.ixx">
+    <ClCompile Include="core\asset_manager.ixx">
       <Filter>system\asset_manager</Filter>
     </ClCompile>
-    <ClCompile Include="asset_manager.cpp">
+    <ClCompile Include="core\asset_manager.cpp">
       <Filter>system\asset_manager</Filter>
     </ClCompile>
     <ClCompile Include="system\gui\application.ixx">
@@ -110,8 +90,47 @@
     <ClCompile Include="game_manager.cpp">
       <Filter>system</Filter>
     </ClCompile>
-    <ClCompile Include="sprite.ixx">
+    <ClCompile Include="scene\sprite.ixx">
       <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\engine_loop.ixx">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\engine_loop.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\engine.ixx">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\engine.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="system\renderer\gdiplus.ixx">
+      <Filter>system\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="system\renderer\gdiplus.cpp">
+      <Filter>system\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="core\atlas.ixx">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\sprite.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\scene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="core\texture.ixx">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\texture.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="system\input\input.ixx">
+      <Filter>system\input</Filter>
+    </ClCompile>
+    <ClCompile Include="system\input\input.cpp">
+      <Filter>system\input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

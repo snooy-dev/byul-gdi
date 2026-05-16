@@ -63,25 +63,25 @@ void Gdi::DrawText()
 	::DrawTextW(m_memory_dc, s.c_str(), s.length(), &rect, DT_CENTER | DT_VCENTER);
 }
 
-void Gdi::DrawBitmap(const std::wstring& path)
+void Gdi::DrawBitmap(const std::wstring& path, int x, int y, int w, int h, float angle, int src_x, int src_y, int src_w, int src_h, bool rotate)
 {
 	HBITMAP& hbitmap{ m_loaded_bitmap[path] };
 	HBITMAP old_hbitmap{ (HBITMAP)::SelectObject(m_bitmap_dc, hbitmap) };
-	::StretchBlt(m_memory_dc, 0, 0, 0, 0, m_bitmap_dc, 0, 0, 0, 0, SRCCOPY);
+	::StretchBlt(m_memory_dc, x, y, w, h, m_bitmap_dc, src_x, src_y, src_w, src_h, SRCCOPY);
 	::SelectObject(m_bitmap_dc, old_hbitmap);
 }
 
-bool Gdi::LoadBitmap(const std::wstring& path)
+bool Gdi::LoadBitmap(const std::wstring& filename)
 {
-	HBITMAP hbitmap{ (HBITMAP)::LoadImage(m_hinstance, path.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION)};
-	m_loaded_bitmap.insert({ path, hbitmap });
+	HBITMAP hbitmap{ (HBITMAP)::LoadImage(m_hinstance, filename.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION)};
+	m_loaded_bitmap.insert({ filename, hbitmap });
 	return hbitmap;
 }
 
-bool Gdi::UnloadBitmap(const std::wstring& path)
+bool Gdi::UnloadBitmap(const std::wstring& filename)
 {
-	bool result{ (bool)::DeleteObject(m_loaded_bitmap[path]) };
-	m_loaded_bitmap.erase(path);
+	bool result{ (bool)::DeleteObject(m_loaded_bitmap[filename]) };
+	m_loaded_bitmap.erase(filename);
 	return result;
 }
 }	// namespace byul

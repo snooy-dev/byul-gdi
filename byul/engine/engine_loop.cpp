@@ -29,6 +29,7 @@ void EngineLoop::Run()
 		
 		Tick();
 
+		m_engine.GetScene().RenderScene(m_engine.GetRenderer());
 		m_engine.GetRenderer().SwapRenderQueue();
 	}
 

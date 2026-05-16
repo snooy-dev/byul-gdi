@@ -129,9 +129,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="core\atlas.ixx" />
+    <ClCompile Include="core\texture.cpp" />
+    <ClCompile Include="core\texture.ixx" />
+    <ClCompile Include="scene\scene.cpp" />
+    <ClCompile Include="scene\sprite.cpp" />
     <ClCompile Include="system\gui\application.cpp" />
-    <ClCompile Include="asset_manager.cpp" />
-    <ClCompile Include="asset_manager.ixx" />
+    <ClCompile Include="core\asset_manager.cpp" />
+    <ClCompile Include="core\asset_manager.ixx" />
     <ClCompile Include="system\gui\canvas.ixx" />
     <ClCompile Include="core\file_manager.ixx" />
     <ClCompile Include="core\file_mananger.cpp" />
@@ -141,19 +146,21 @@
     <ClCompile Include="engine\engine_loop.ixx" />
     <ClCompile Include="game_manager.cpp" />
     <ClCompile Include="game_manager.ixx" />
-    <ClCompile Include="game_object.ixx" />
-    <ClCompile Include="system\renderer\gdi.cpp" />
-    <ClCompile Include="system\renderer\gdi.ixx" />
+    <ClCompile Include="scene\game_object.ixx" />
     <ClCompile Include="launch\launch.cpp" />
     <ClCompile Include="launch\launch.ixx" />
+    <ClCompile Include="system\input\input.cpp" />
+    <ClCompile Include="system\input\input.ixx" />
+    <ClCompile Include="system\renderer\gdiplus.cpp" />
+    <ClCompile Include="system\renderer\gdiplus.ixx" />
     <ClCompile Include="system\renderer\renderer.cpp" />
     <ClCompile Include="system\renderer\renderer.ixx" />
     <ClCompile Include="system\renderer\rhi.ixx" />
     <ClCompile Include="system\gui\application.ixx" />
     <ClCompile Include="launch\win_main.cpp" />
-    <ClCompile Include="scene.ixx" />
+    <ClCompile Include="scene\scene.ixx" />
     <ClCompile Include="core\core.ixx" />
-    <ClCompile Include="sprite.ixx" />
+    <ClCompile Include="scene\sprite.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="thirdparty\json.hpp" />

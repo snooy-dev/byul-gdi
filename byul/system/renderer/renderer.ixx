@@ -12,6 +12,7 @@ using RenderCommand = std::function<void(Rhi&)>;
 class RenderCommandQueue {
 public:
 	void Enqueue(RenderCommand command);
+	void Clear();
 	const std::vector<RenderCommand>& GetCommandList() const;
 
 private:
@@ -23,11 +24,13 @@ public:
 	Renderer(Application& application);
 
 	void Draw();
-	
+
 	void SubmitRenderCommand(const RenderCommand& command);
 	void SwapRenderQueue();
 
 	void ExecuteRenderCommands();
+
+	Rhi& GetRhi();
 
 private:
 	Application& m_application;

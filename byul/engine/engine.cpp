@@ -10,13 +10,14 @@ bool Engine::m_is_exiting{};
 
 Engine::Engine()
 {
-	m_application = std::make_unique<Application>();
+	m_input = std::make_unique<Input>();
+	m_application = std::make_unique<Application>(*m_input);
 	m_renderer = std::make_unique<Renderer>(*m_application);
 	m_scene = std::make_unique<Scene>();
 
-	/*File project_file = FileManager::LoadFile("byul_project");
+	File project_file = FileManager::LoadFile(L"../byul_project");
 	const std::string default_scene_path = project_file["default_scene"];
-	AssetManager::LoadAsset(default_scene_path);*/
+	m_scene->LoadScene(*m_renderer, default_scene_path);
 }
 
 bool Engine::IsExiting()
@@ -37,5 +38,10 @@ Application& Engine::GetApplication()
 Renderer& Engine::GetRenderer()
 {
 	return *m_renderer;
+}
+
+Scene& Engine::GetScene()
+{
+	return *m_scene;
 }
 }	// namespace byul

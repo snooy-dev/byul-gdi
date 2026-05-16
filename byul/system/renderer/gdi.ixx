@@ -25,10 +25,10 @@ public:
 	virtual void Present() override;
 
 	virtual void DrawText() override;
-	virtual void DrawBitmap(const std::wstring& path) override;
+	virtual void DrawBitmap(const std::wstring& path, int x, int y, int w, int h, float angle, int src_x, int src_y, int src_w, int src_h, bool rotate) override;
 
-	virtual bool LoadBitmap(const std::wstring& path) override;
-	virtual bool UnloadBitmap(const std::wstring& path) override;
+	virtual bool LoadBitmap(const std::wstring& filename) override;
+	virtual bool UnloadBitmap(const std::wstring& filename) override;
 
 private:
 	HINSTANCE m_hinstance;

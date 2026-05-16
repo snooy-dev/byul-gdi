@@ -5,11 +5,15 @@ module;
 module FileManager;
 
 namespace byul {
-File FileManager::LoadFile(const std::string& file_path)
+File FileManager::LoadFile(const std::wstring& file_path)
 {
-	std::ifstream file_stream{ "../" + file_path + ".json"};
+	std::filesystem::path p{ file_path + L".json" };
+	std::ifstream file_stream{ p.c_str() };
+
 	File j{};
-	file_stream >> j;
+	if (file_stream) {
+		file_stream >> j;
+	}
 	return j;
 }
 }	// namespace byul

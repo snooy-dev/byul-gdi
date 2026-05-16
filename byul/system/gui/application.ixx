@@ -6,11 +6,15 @@ module;
 
 export module Application;
 
+import Input;
+
 export namespace byul {
 class Application {
 public:
-	Application();
+	Application(Input& input);
+
 	void PumpMessage();
+	void ProcessMessage(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 
 	HWND GetWindowHandle() const;
 
@@ -20,5 +24,7 @@ private:
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 	HWND m_hwnd;
+
+	Input& m_input;
 };
 }	// namespace byul
